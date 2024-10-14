@@ -222,7 +222,7 @@ CREATE TABLE `nhanvien` (
   `SDT` char(10) COLLATE utf32_unicode_ci NOT NULL,
   `Email` varchar(35) COLLATE utf32_unicode_ci NOT NULL,
   `Phai` tinyint(1) NOT NULL,
-  `NgaySinh` date NOT NULL DEFAULT current_timestamp(),
+  `NgaySinh` date NOT NULL,
   `ChucVu` varchar(25) COLLATE utf32_unicode_ci NOT NULL,
   `Luong` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
@@ -554,6 +554,8 @@ ALTER TABLE `sach`
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `nhanvien` (`MaNV`);
 COMMIT;
+
+SET PASSWORD FOR 'root'@'localhost' = '';
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
