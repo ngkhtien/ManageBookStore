@@ -150,6 +150,7 @@ public class SachBUS {
          }
          return false;
     }
+    
     public boolean CheckSL(String masp , int sl)
     {
         for(SachDTO sp : listSach)
